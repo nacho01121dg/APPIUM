@@ -1,6 +1,6 @@
 Feature: Shopping Cart
 
-    @regression @test
+    @regression
     Scenario: Agregar producto al carrito de compra
       Given Ingreso a la app con datos correctos
       When Elijo el 'producto'

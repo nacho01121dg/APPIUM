@@ -25,6 +25,15 @@ class CommonActions(object):
     def get_text_of_element(self, *locator):
         return self.driver.find_element(*locator).text
 
+    def scroll_into_element_tap(self, text):
+        scroll_down_selector = (By.ANDROID_UIAUTOMATOR,
+                                'new UiScrollable(new UiSelector().'
+                                'scrollable(true).instance(0)).'
+                                'scrollIntoView(new UiSelector().'
+                                'textContains("{}").instance(0))'
+                                .format(text))
+        self.tap_element(*scroll_down_selector)
+
     def scroll_into_element(self, text):
         scroll_down_selector = (By.ANDROID_UIAUTOMATOR,
                                 'new UiScrollable(new UiSelector().'

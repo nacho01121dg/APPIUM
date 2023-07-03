@@ -1,6 +1,6 @@
 Feature: Products Order By Price
 
-    @regression @test
+    @regression
     Scenario: Ordenar productos por precio de menor a mayor
       Given Ingreso a la app con datos correctos
       When Elijo 'filtro'

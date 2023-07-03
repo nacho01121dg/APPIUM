@@ -19,11 +19,15 @@ def step_impl(context):
 def step_impl(context):
     text_precio_menor = ORDER_BY_PRICE_TEXTS.get("txt_precio_menor")
     product_screen = ProductosScreen(context)
-    product_screen.assert_text(*product_screen.lbl_precio_bajo, text=text_precio_menor)
+    product_screen.assert_text(*product_screen
+                               .lbl_precio_bajo,
+                               text=text_precio_menor)
 
 
 @Then("Visualizo el ultimo producto con precio mayor")
 def step_impl(context):
     text_precio_mayor = ORDER_BY_PRICE_TEXTS.get("txt_precio_mayor")
     product_screen = ProductosScreen(context)
-    product_screen.assert_text(*product_screen.scroll_down_precio_alto, text=text_precio_mayor)
+    product_screen.assert_text(*product_screen
+                               .scroll_down_precio_alto,
+                               text=text_precio_mayor)

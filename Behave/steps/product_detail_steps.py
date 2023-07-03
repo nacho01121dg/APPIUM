@@ -6,16 +6,15 @@ from utils.dictionaries.input_data import PRODUCT_TEXTS
 
 @When("Elijo el 'producto'")
 def step_impl(context):
-    text_product_name = PRODUCT_TEXTS.get("txt_product_name")
+    text_product_name = PRODUCT_TEXTS.get("txt_productname")
     products_screen = ProductosScreen(context)
-    products_screen.tap_element(*products_screen.scroll_down_product_name)
+    products_screen.scroll_into_element_tap(text_product_name)
 
 
 @Then("Visualizo el 'titulo' de 'detalle'")
 def step_impl(context):
     text_title_product_detail = PRODUCT_TEXTS.get("txt_title_product_detail")
     product_detail_screen = ProductDetailScreen(context)
-    product_detail_screen.scroll_into_element(text_title_product_detail)
     product_detail_screen.assert_text(
         *product_detail_screen.lbl_title_product_detail,
         text=text_title_product_detail)

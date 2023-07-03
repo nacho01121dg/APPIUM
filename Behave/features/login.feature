@@ -1,6 +1,6 @@
 Feature: Log In
 
-    @regression
+    @regression @smoke
     Scenario: Prueba de usuario exitoso
       Given Tengo la aplicacion de saucelabs
       When Ingreso 'usuario' correcto
